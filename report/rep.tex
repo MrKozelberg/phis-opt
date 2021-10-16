@@ -14,12 +14,34 @@
 \usepackage{physics}
 \usepackage{nicefrac}
 \usepackage{cancel}
-\usepackage{hyperref}
+\usepackage[unicode, colorlinks=true]{hyperref}
 \usepackage{cmap}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
 
-\title{Лабораторная работа}
-\author{Александр Козлов}
-
+\title{Лабораторная работа №1}
+\author{Александр Козлов\and Алексей Чубаров}
+\date{}
 \begin{document}
 \maketitle
 
@@ -28,14 +50,14 @@
 Для определения масштабный коэффициент определим сколько пикселей в одном миллиметре. Будем работать со шкалой, представленной на рисунке \ref{fig:1}. 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width = 0.5\linewidth]{../data/1-0.jpg}
+	\includegraphics[width = 0.5\linewidth]{data/1-0.jpg}
 	\caption{Нониусная шкала колибратора. Между двумя соседними маленькими отметками лежит одна десятая часть миллиметра. Ось шкалы находится под углом $5^\circ$ к горизонту.}
 	\label{fig:1}
 \end{figure}
 В 12 сверху строке пикселей имеется картина интенсивностей, изображённая на рисунке \ref{fig:2}, откуда можно определить расстояние между двумя большими чёрными праллельными полосами.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale = 1]{../plots/1-0.jpg}
+	\includegraphics[scale = 1]{plots/1-0.jpg}
 	\caption{Интенсивность пикселей в 12 строке сверху изображения \ref{fig:1}.}
 	\label{fig:2}
 \end{figure}
@@ -70,5 +92,246 @@
 \end{equation}
 она получается мала и при окгруглении до значящих порядков становится равной нулю.
 
+\subsection{Вычисление радиуса кривизны.}
+Для начала найдём с учётом масштабного коэффициента значения квадратов радиуса и построим линейную аппроксимацию (см. рис~\ref{fig:3}). Затем вычислим погрешности для угловых коэффициентов в наших зависимостях. Запишем результаты данных вычислений в таблицу.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale = 0.65]{plots/1-1.jpg}
+	\caption{Графики зависимостей $r_m^2(m)$ для разных цветов.}
+	\label{fig:3}
+\end{figure}
 
+
+
+
+
+			
+	\begin{tabular}{|p{0.13\textwidth}|p{0.13\textwidth}|p{0.16\textwidth}|p{0.16\textwidth}|p{0.20\textwidth}|}
+		\hline 
+		\begin{center}
+			цвет
+		\end{center}
+		& \begin{center}
+			тип полос
+		\end{center}
+		& \begin{center}
+			значение углового коэффициента
+		\end{center}
+		& \begin{center}
+			абсолютная погрешность
+		\end{center}
+		& \begin{center}
+			относительная погрешность
+		\end{center}
+		\\
+		\hline 
+		\begin{center}\multirow{2}{*}{
+				красный
+			}\end{center} & \begin{center}
+			тёмный
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,034$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,003$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,09$
+		\end{center}\\
+		\cline{2-5} 
+		& \begin{center}
+			светлый
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,040$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,001$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,025$
+		\end{center}
+		\\ 
+		\hline 
+		\begin{center}\multirow{2}{*}{зелёный}\end{center} & \begin{center}
+			тёмный
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,033$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,004$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,12$
+		\end{center}
+		\\
+		\cline{2-5} 
+		& \begin{center}
+			светлый
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,028$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,001$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,04$
+		\end{center}
+		\\
+		\hline 
+		\begin{center}\multirow{2}{*}{синий
+			}\end{center} & \begin{center}
+			тёмный
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,028$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,007$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,25$
+		\end{center}
+		\\
+		\cline{2-5} 
+		& \begin{center}
+			светлый
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,028$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,001$
+		\end{center}
+		& \begin{center}
+			$\displaystyle 0,04$
+		\end{center}
+		\\
+		\hline
+	\end{tabular}
+	
+	Теперь вычислим по этим данным радиус кривизны воспользовавшись тем, что 
+	\begin{equation*}
+		\text{``угловой коэффициент''}=2\cdot R\cdot \lambda,
+	\end{equation*}
+	где $R$ --- радиус кривизны, который нам и нужно найти, а $\lambda$ --- длина волны света. Воспользовавшись этой формулой получим следующее
+	
+	
+		\begin{tabular}{|p{0.20\textwidth}|p{0.13\textwidth}|p{0.13\textwidth}|p{0.15\textwidth}|p{0.16\textwidth}|}
+			\hline 
+			\begin{center}
+				цвет
+			\end{center}
+			& \begin{center}
+				тип полос
+			\end{center}
+			& \begin{center}
+				$\displaystyle R,$ мм
+			\end{center}
+			& \begin{center}
+				абсолютная погрешность
+			\end{center}
+			& \begin{center}
+				относительная погрешность
+			\end{center}
+			\\
+			\hline 
+			\begin{center}\multirow{2}{*}{
+					красный ($\displaystyle 600$ нм)
+				}\end{center} & \begin{center}
+				тёмный
+			\end{center}
+			& \begin{center}
+				$\displaystyle 28$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 3$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,09$
+			\end{center}
+			\\
+			\cline{2-5} 
+			& \begin{center}
+				светлый
+			\end{center}
+			& \begin{center}
+				$\displaystyle 33,3$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,8$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,025$
+			\end{center}
+			\\
+			\hline 
+			\begin{center}\multirow{2}{*}{
+					зелёный ($\displaystyle 550$ нм) 
+			}\end{center} & \begin{center}
+				тёмный
+			\end{center}
+			& \begin{center}
+				$\displaystyle 30$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 4$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,12$
+			\end{center}
+			\\
+			\cline{2-5} 
+			& \begin{center}
+				светлый
+			\end{center}
+			& \begin{center}
+				$\displaystyle 25$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 1$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,04$
+			\end{center}
+			\\
+			\hline 
+			\begin{center}\multirow[b]{2}{*}{
+					синий ($\displaystyle 460$ нм) 			}\end{center} & \begin{center}
+				тёмный
+			\end{center}
+			& \begin{center}
+				$\displaystyle 30$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 8$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,25$
+			\end{center}
+			\\
+			\cline{2-5} 
+			& \begin{center}
+				светлый
+			\end{center}
+			& \begin{center}
+				$\displaystyle 30$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 1$
+			\end{center}
+			& \begin{center}
+				$\displaystyle 0,04$
+			\end{center}
+			\\
+			\hline
+		\end{tabular}
+		\vspace{0.2cm}
+		
+	Таким образом радиус кривизны линзы составляет примерно $30$ мм.
+	
+	 
 \end{document}
