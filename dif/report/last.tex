@@ -1,0 +1,85 @@
+% document type
+\documentclass[12pt]{article}
+
+% packages
+\usepackage[total={170mm,230mm}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{nicefrac}
+\usepackage{cancel}
+\usepackage{hyperref}
+\usepackage{cmap}
+\usepackage{textcomp}
+
+\title{Дифракционная решетка}
+\author{Алексей Чубаров \and Козлов Александр}
+
+\begin{document}
+\maketitle
+
+Измерили координаты максимумов дифракционной картины для длины волны $\lambda = 450\ \text{нм}$. Результаты отобразили в таблице \ref{tab:1}.
+\begin{table}[htbp]
+\centering
+\caption{Результаты измерений координат максимумов дифракционной картины для длины волны $\lambda = 450\ \text{нм}$.}
+\begin{tabular}{|r|r|r|r|r|} 
+\hline
+\multicolumn{1}{|l|}{$\# \text{max}$} & \multicolumn{1}{l|}{$\theta^\circ$} & \multicolumn{1}{l|}{d, нм} & \multicolumn{1}{l|}{$\delta d$} & \multicolumn{1}{l|}{$\Delta d,\ \text{нм}$}  \\ 
+\hline
+3                                              & 56                                  & 1,64E+03                   & 0,04                            & 7E+01                                        \\ 
+\hline
+2                                              & 34                                  & 1,6E+03                    & 0,06                            & 1E+02                                        \\ 
+\hline
+1                                              & 16                                  & 1,6E+03                    & 0,11                            & 2E+02                                        \\ 
+\hline
+-1                                             & -16                                 & 1,7E+03                    & 0,12                            & 2E+02                                        \\ 
+\hline
+-2                                             & -33                                 & 1,7E+03                    & 0,06                            & 1E+02                                        \\ 
+\hline
+-3                                             & -55                                 & 1,66E+03                   & 0,04                            & 7E+01                                        \\
+\hline
+\end{tabular}
+\label{tab:1}
+\end{table}
+\par Провели аналогичное измерение для красного цвета (использовался гелий-неоновый лазер с $\lambda = 710\ \text{нм}$), их результаты выведены на таблицу 
+\begin{table}[htbp]
+\centering
+\caption{Результаты измерений координат максимумов дифракционной картины для длины волны $\lambda = 710\ \text{нм}$.}
+\begin{tabular}{|r|r|r|r|r|} 
+\hline
+\multicolumn{1}{|l|}{$\# \text{max}$} & \multicolumn{1}{l|}{$\theta^\circ$} & \multicolumn{1}{l|}{d, нм} & \multicolumn{1}{l|}{$\delta d$} & \multicolumn{1}{l|}{$\Delta d,\ \text{нм}$}  \\ 
+\hline
+2                           & 59                      & 7,1E+02                    & 0,09                    & 6E+01                        \\ 
+\hline
+1                           & 25                      & 7E+02                      & 0,17                    & 1E+02                        \\ 
+\hline
+-1                          & -27                     & 7E+02                      & 0,17                    & 1E+02                        \\ 
+\hline
+-2                          & -60                     & 7,2E+02                    & 0,09                    & 6E+01                        \\
+\hline
+\end{tabular}
+\end{table}
+\par Из данных таблиц видно, что по углу третий максимум для $\lambda = 450\ \text{нм}$ совпадает со вторым максимумом для $\lambda = 710\ \text{нм}$. Таким образом дисперсионная область будет
+\begin{equation}
+	\Delta \lambda = 710 - 450 = 260\ \text{нм}.
+\end{equation}
+Абсолютная погрешность будет
+\begin{equation}
+	\Delta\qty(\Delta \lambda) = 70\ \text{нм}.
+\end{equation}
+Относительная погрешность будет
+\begin{equation}
+	\delta \qty(\Delta \lambda) = 27\%.
+\end{equation}
+Исходя из теории дисперсионная область есть
+\begin{equation}
+	\Delta \lambda = \dfrac{\lambda}{m} = \dfrac{450}{2} = 225\ \text{нм}.
+\end{equation}
+Что с учётом погрешностей совпадает с вычисленным ранее.
+\end{document}
